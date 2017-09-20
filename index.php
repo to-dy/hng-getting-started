@@ -2,14 +2,21 @@
 <?php 
   include("controller.php");
 ?>
+
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+?>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/7b4c3ce3c9.js"></script>
 
   <script>
@@ -116,8 +123,14 @@
       body {
         width: 100%;
         height: 100%;
+        margin: 0;
+        padding: 0;
         font-family: 'Raleway', sans-serif;
         font-weight: 400;
+      }
+      p,h2 {
+        margin: 0;
+        padding: 0;
       }
       .quote-box {
         width: 400px;

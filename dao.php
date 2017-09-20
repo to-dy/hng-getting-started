@@ -24,7 +24,15 @@
 				echo "<script> console.log('couldn\'t create database');</script>";
 			}
 
-			$sql1 = "INSERT INTO quotes (quote_text, quote_author) VALUES "."(
+			$sql2 = "CREATE TABLE `quotedb`.`quotes` ( `quote_text` VARCHAR(1000) NOT NULL , `quote_author` VARCHAR(50) NOT NULL ) ENGINE = InnoDB;";
+
+			if(mysqli_query($link, $sql2)) {
+				echo "<script> console.log('database table created');</script>";
+			} else {
+				echo "<script> console.log('couldn\'t create table');</script>";
+			}
+
+			$sql1 = "INSERT INTO `quotedb`.`quotes` (quote_text, quote_author) VALUES (
 			'The best way to get a project done faster is to start sooner','Jim Highsmith'
 			),
 			(
@@ -37,7 +45,7 @@
 			    'The bearing of a child takes nine months, no matter how many women are assigned. Many software tasks have this characteristic because of the sequential nature of debugging.','Fred Brooks'
 			),
 			(
-			    'That's the thing about people who think they hate computers. What they really hate is lousy programmers.','Larry Niven'
+			    'That\'s the thing about people who think they hate computers. What they really hate is lousy programmers.','Larry Niven'
 			),
 			(
 			    'It is not enough for code to work.','Robert C. Martin'
@@ -73,7 +81,7 @@
 	}
 
 	function getQuote() {
-		$rand = mt_rand(0,7);
+		$rand = mt_rand(0,6);
 
 		$array = query();
 		mysqli_close(connect());
